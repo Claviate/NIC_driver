@@ -7057,7 +7057,8 @@ int _kc_flow_block_cb_setup_simple(struct flow_block_offload *f,
 /*****************************************************************************/
 #if (LINUX_VERSION_CODE < KERNEL_VERSION(5,4,0))
 #if (!(RHEL_RELEASE_CODE >= RHEL_RELEASE_VERSION(8,2)) && \
-     !(SLE_VERSION_CODE >= SLE_VERSION(15,2,0)))
+     !(SLE_VERSION_CODE >= SLE_VERSION(15,2,0)) && \
+     !(LINUX_VERSION_CODE >= KERNEL_VERSION(4,15,0)))
 static inline unsigned int skb_frag_off(const skb_frag_t * frag)
 {
 	return frag->page_offset;
